@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #a9aeb8;
+    padding: 1rem;
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+
+        .main {
+          cursor: pointer;
+          // text-decoration: underline;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .project {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .publish {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+      }
+
+      .divider {
+        background-color: #dbdde1;
+        width: 1px;
+        height: 1.25rem;
+      }
+
+      button {
+        color: #3565a9;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  main {
+    max-width: 700px;
+    margin-top: 0.5rem;
+    margin-inline: auto;
+
+    .statusbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.25rem;
+      padding-inline: 0.5rem;
+      border-style: solid;
+      border-color: #e5e7eb;
+      border-width: 1px;
+      border-radius: 0.25rem;
+      color: #aaafb8;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &.left {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+
+          .name {
+            background-color: #d9f9e6;
+            color: #38795c;
+            padding: 0.25rem;
+            padding-inline: 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 700;
+          }
+
+          .divider {
+            background-color: #dbdde1;
+            width: 1px;
+            height: 0.75rem;
+          }
+
+          .time-passed {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+
+          img {
+            border-radius: 999999999px;
+          }
+
+          .dontknowwhatthisisyet {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+        }
+
+        &.right {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+}
