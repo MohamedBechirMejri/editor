@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+body header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #a9aeb8;
+  padding: 1rem;
+}
+body header .breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body header .breadcrumbs p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+body header .breadcrumbs p .main {
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+body header .breadcrumbs p .main:hover {
+  text-decoration: underline;
+}
+body header .breadcrumbs p .project {
+  cursor: pointer;
+}
+body header .breadcrumbs p .project:hover {
+  text-decoration: underline;
+}
+body header .publish {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+body header .publish div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+body header .publish .divider {
+  background-color: #dbdde1;
+  width: 1px;
+  height: 1.25rem;
+}
+body header .publish button {
+  color: #3565a9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+body main {
+  max-width: 700px;
+  margin-top: 0.5rem;
+  margin-inline: auto;
+}
+body main .statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.25rem;
+  padding-inline: 0.5rem;
+  border-style: solid;
+  border-color: #e5e7eb;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  color: #aaafb8;
+}
+body main .statusbar div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+body main .statusbar div.left {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+body main .statusbar div.left .name {
+  background-color: #d9f9e6;
+  color: #38795c;
+  padding: 0.25rem;
+  padding-inline: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+body main .statusbar div.left .divider {
+  background-color: #dbdde1;
+  width: 1px;
+  height: 0.75rem;
+}
+body main .statusbar div.left .time-passed {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+body main .statusbar div.left img {
+  border-radius: 999999999px;
+}
+body main .statusbar div.left .dontknowwhatthisisyet {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+body main .statusbar div.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
