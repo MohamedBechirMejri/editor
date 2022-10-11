@@ -1,0 +1,18 @@
+{
+  "name": "helpjuice-editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "MohamedBechirMejri",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production && sass -c --no-source-map ./src/main.scss ./dist/main.css",
+    "watchsass": "sass -c --no-source-map ./src/main.scss ./dist/main.css --watch",
+    "watchwebpack": "webpack --mode production --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
