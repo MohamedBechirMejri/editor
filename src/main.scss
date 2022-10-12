@@ -143,5 +143,15 @@ body {
         }
       }
     }
+
+    .textarea {
+      margin-top: 2rem;
+      outline: none;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
   }
 }
