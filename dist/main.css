@@ -125,3 +125,11 @@ body main .statusbar div.right {
   align-items: center;
   gap: 0.5rem;
 }
+body main .textarea {
+  margin-top: 2rem;
+  outline: none;
+}
+body main .textarea h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
