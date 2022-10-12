@@ -132,4 +132,17 @@ body main .textarea {
 body main .textarea h1 {
   font-size: 2rem;
   font-weight: bold;
+  position: relative;
+}
+body main .textarea h1::after {
+  content: attr(data-placeholder);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #a9aeb8;
+  cursor: text;
+}
+body main .textarea h1.hide-placeholder::after {
+  display: none;
 }
