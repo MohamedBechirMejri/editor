@@ -146,3 +146,89 @@ body main .textarea h1::after {
 body main .textarea h1.hide-placeholder::after {
   display: none;
 }
+body main .block-picker {
+  border: solid 1px #e5e7eb;
+  border-radius: 0.25rem;
+  width: max-content;
+  height: max-content;
+  max-width: 21rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: all 0.25s;
+  transform-origin: top left;
+  transform: scaleX(0) scaleY(0);
+}
+body main .block-picker.open {
+  transform: scaleX(1) scaleY(1);
+}
+body main .block-picker h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 0.25rem;
+  color: #0d121c;
+}
+body main .block-picker h2 {
+  font-size: 0.85rem;
+  font-weight: light;
+  padding-bottom: 0.75rem;
+  color: #a4aab4;
+}
+body main .block-picker h3 {
+  font-size: 1rem;
+  font-weight: light;
+  color: #8e929c;
+  padding-bottom: 1rem;
+}
+body main .block-picker h3 span {
+  background-color: #3565a9;
+  color: white;
+  padding-inline: 0.25rem;
+  padding-block: 0.1rem;
+  border-radius: 0.25rem;
+}
+body main .block-picker .block {
+  background-color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+body main .block-picker .block:hover {
+  background-color: rgb(243, 243, 243);
+}
+body main .block-picker .block h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 0.25rem;
+  color: #0d121c;
+}
+body main .block-picker .block p {
+  font-size: 0.85rem;
+  font-weight: light;
+  padding-bottom: 0.25rem;
+  color: #9da3ae;
+}
+
+/* beautiful scrollbars */
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 100%;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
