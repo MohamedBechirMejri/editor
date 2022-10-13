@@ -8,6 +8,9 @@ const textarea = document.querySelector(".textarea");
 
 textarea.focus();
 
+// Keep editor focused
+textarea.addEventListener("blur", e => e.target.focus());
+
 keepLastElement(textarea);
 togglePlaceholder(textarea);
 setOverlayPosition(textarea);
