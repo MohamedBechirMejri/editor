@@ -129,12 +129,15 @@ body main .textarea {
   margin-top: 2rem;
   outline: none;
 }
-body main .textarea h1 {
-  font-size: 2rem;
-  font-weight: bold;
+body main .textarea h1,
+body main .textarea h2,
+body main .textarea h3 {
   position: relative;
+  margin-block: 1rem;
 }
-body main .textarea h1::after {
+body main .textarea h1::after,
+body main .textarea h2::after,
+body main .textarea h3::after {
   content: attr(data-placeholder);
   display: block;
   position: absolute;
@@ -143,8 +146,22 @@ body main .textarea h1::after {
   color: #a9aeb8;
   cursor: text;
 }
-body main .textarea h1.hide-placeholder::after {
+body main .textarea h1.hide-placeholder::after,
+body main .textarea h2.hide-placeholder::after,
+body main .textarea h3.hide-placeholder::after {
   display: none;
+}
+body main .textarea h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+body main .textarea h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body main .textarea h3 {
+  font-size: 1rem;
+  font-weight: bold;
 }
 body main .block-picker {
   background-color: #fff;
