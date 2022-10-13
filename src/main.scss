@@ -172,6 +172,7 @@ body {
     }
 
     .block-picker {
+      background-color: #fff;
       border: solid 1px #e5e7eb;
       border-radius: 0.25rem;
       width: max-content;
@@ -238,6 +239,7 @@ body {
           padding-bottom: 0.25rem;
           color: #0d121c;
         }
+
         p {
           font-size: 0.85rem;
           font-weight: light;
@@ -249,7 +251,7 @@ body {
   }
 }
 
-/* beautiful scrollbars */
+// beautiful scrollbars
 *::-webkit-scrollbar {
   width: 7px;
   height: 100%;
