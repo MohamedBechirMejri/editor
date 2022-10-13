@@ -1,3 +1,4 @@
+import addBlock from "../libs/addBlock";
 import keepLastElement from "../libs/keepLastElement";
 import setOverlayPosition from "../libs/setOverlayPosition";
 import toggleOverlay from "../libs/toggleOverlay";
@@ -9,3 +10,4 @@ keepLastElement(textarea);
 togglePlaceholder(textarea);
 setOverlayPosition(textarea);
 toggleOverlay(textarea);
+addBlock(textarea);
