@@ -147,6 +147,7 @@ body main .textarea h1.hide-placeholder::after {
   display: none;
 }
 body main .block-picker {
+  background-color: #fff;
   border: solid 1px #e5e7eb;
   border-radius: 0.25rem;
   width: max-content;
@@ -214,7 +215,6 @@ body main .block-picker .block p {
   color: #9da3ae;
 }
 
-/* beautiful scrollbars */
 *::-webkit-scrollbar {
   width: 7px;
   height: 100%;
