@@ -6,6 +6,8 @@ import togglePlaceholder from "../libs/togglePlaceholder";
 
 const textarea = document.querySelector(".textarea");
 
+textarea.focus();
+
 keepLastElement(textarea);
 togglePlaceholder(textarea);
 setOverlayPosition(textarea);
