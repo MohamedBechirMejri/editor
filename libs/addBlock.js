@@ -8,7 +8,10 @@ const addBlock = el => {
   const h3 = document.getElementById("h3-block");
 
   const handleClick = html => {
-    el.innerHTML += html;
+    window
+      .getSelection()
+      .focusNode.parentElement.insertAdjacentHTML("afterend", html);
+
     overlay.classList.remove("open");
     moveCursortoNextElement();
   };
