@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production && sass -c --no-source-map ./src/main.scss ./dist/main.css",
-    "watchsass": "sass -c --no-source-map ./src/main.scss ./dist/main.css --watch",
-    "watchwebpack": "webpack --mode production --watch"
+    "ws": "sass -c --no-source-map ./src/main.scss ./dist/main.css --watch",
+    "ww": "webpack serve --mode production"
   },
   "devDependencies": {
     "sass": "^1.55.0",
