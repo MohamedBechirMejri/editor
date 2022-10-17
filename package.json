@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --mode production && sass -c --no-source-map ./src/main.scss ./dist/main.css",
     "ws": "sass -c --no-source-map ./src/main.scss ./dist/main.css --watch",
-    "ww": "webpack serve --mode production"
+    "ww": "webpack --mode production --watch"
   },
   "devDependencies": {
     "sass": "^1.55.0",
