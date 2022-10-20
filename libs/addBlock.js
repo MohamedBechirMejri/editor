@@ -30,7 +30,13 @@ const addBlock = el => {
 
   el.addEventListener("keydown", e => {
     if (e.key === "Enter" && overlay.classList.contains("open")) {
-      overlay.children[2].click();
+      let clicked = false;
+
+      document.querySelectorAll(".block").forEach(block => {
+        if (clicked || block.style.display === "none") return;
+        else block.click();
+        clicked = true;
+      });
       e.preventDefault();
     }
   });
