@@ -1,9 +1,9 @@
-import "./main.scss";
-import addBlock from "../libs/addBlock";
-import filterBlocks from "../libs/filterBlocks";
-import keepLastElement from "../libs/keepLastElement";
-import setOverlayPosition from "../libs/setOverlayPosition";
-import togglePlaceholder from "../libs/togglePlaceholder";
+import "./styles/main.scss";
+import addBlock from "./libs/addBlock";
+import filterBlocks from "./libs/filterBlocks";
+import keepLastElement from "./libs/keepLastElement";
+import setOverlayPosition from "./libs/setOverlayPosition";
+import togglePlaceholder from "./libs/togglePlaceholder";
 
 const textarea: HTMLElement | null = document.querySelector(".textarea");
 
