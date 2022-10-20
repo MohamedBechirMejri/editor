@@ -1,8 +1,10 @@
+import clickFirstBlock from "../clickFirstBlock";
 import filterBlocks from "../filterBlocks";
 import toggleOverlay from "../toggleOverlay";
 
 const addKeydownListener = (textarea: HTMLElement, filter: string) => {
   const overlay = document.querySelector(".block-picker");
+  const blocks: NodeList = document.querySelectorAll(".block");
 
   textarea.addEventListener("keydown", e => {
     if (e.key === "/") toggleOverlay("open");
@@ -14,7 +16,10 @@ const addKeydownListener = (textarea: HTMLElement, filter: string) => {
 
       if (!filter) toggleOverlay("close");
 
-      const blocks = document.querySelectorAll(".block");
+      if (e.key === "Enter" && overlay!.classList.contains("open")) {
+        clickFirstBlock(blocks);
+        e.preventDefault();
+      }
 
       filterBlocks(blocks, filter);
     }
