@@ -4,6 +4,7 @@
     "browser": true
   },
   "extends": [
+    "plugin:import/recommended",
     "airbnb-typescript/base",
     "prettier"
   ],
