@@ -4,14 +4,14 @@ import keepLastElement from "../libs/keepLastElement";
 import setOverlayPosition from "../libs/setOverlayPosition";
 import togglePlaceholder from "../libs/togglePlaceholder";
 
-const textarea = document.querySelector(".textarea");
+const textarea: HTMLElement | null = document.querySelector(".textarea");
 
 let filter = "";
 
-textarea.focus();
+textarea!.focus();
 
 // Keep editor focused
-textarea.addEventListener("blur", e => e.target.focus());
+textarea && textarea.addEventListener("blur", (e: any) => e.target.focus());
 
 keepLastElement(textarea);
 togglePlaceholder(textarea);
