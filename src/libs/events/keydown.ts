@@ -11,38 +11,31 @@ const addKeydownListener = (textarea: HTMLElement, filter: string) => {
     const { classList } = overlay!;
     const { children } = textarea;
 
-    switch (true) {
-      case e.key.length === 1:
-        filter += e.key; // add letters or numbers only
-        break;
+    if (e.key === "/") toggleOverlay("open");
 
-      case e.key === " ":
-        blockInputOnFirstElement(e, children);
-        break;
+    if (classList.contains("open") && e.key.length === 1) filter += e.key; // add letters or numbers only
 
-      case e.key === "/":
-        toggleOverlay("open");
-        break;
+    if (e.key === " ") blockInputOnFirstElement(e, children);
 
-      case e.key === "Backspace":
-        blockInputOnFirstElement(e, children);
-        if (classList.contains("open")) filter = filter.slice(0, -1); // delete last character
-        break;
-
-      case e.key === "Escape":
-        filter = ""; // clear filter
-        e.preventDefault();
-        break;
-
-      case e.key === "Enter":
-        if (e.key === "Enter" && classList.contains("open"))
-          clickFirstBlock(blocks);
-        filter = ""; // clear filter
-        e.preventDefault();
-        break;
+    if (e.key === "Backspace") {
+      blockInputOnFirstElement(e, children);
+      if (classList.contains("open")) filter = filter.slice(0, -1); // delete last character
     }
 
-    if (!filter) toggleOverlay("close");
+    if (e.key === "Escape") {
+      filter = ""; // clear filter
+      e.preventDefault();
+    }
+
+    if (e.key === "Enter") {
+      if (classList.contains("open")) {
+        clickFirstBlock(blocks);
+        e.preventDefault();
+      }
+      filter = ""; // clear filter
+    }
+
+    if (!filter && e.key !== "/") toggleOverlay("close");
     filterBlocks(blocks, filter);
   });
 };
