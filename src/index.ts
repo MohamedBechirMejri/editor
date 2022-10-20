@@ -19,4 +19,4 @@ addKeydownListener(textarea!, filter);
 keepLastElement(textarea);
 togglePlaceholder(textarea);
 setOverlayPosition(textarea);
-addBlock(textarea);
+addBlock();
