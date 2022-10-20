@@ -10,17 +10,21 @@ const addKeydownListener = (textarea: HTMLElement, filter: string) => {
     if (e.key === "/") toggleOverlay("open");
 
     if (overlay!.classList.contains("open")) {
-      if (e.key.length === 1) filter += e.key;
-      if (e.key === "Enter" || e.key === "Escape") filter = "";
-      if (e.key === "Backspace") filter = filter.slice(0, -1);
-
-      if (!filter) toggleOverlay("close");
-
-      if (e.key === "Enter" && overlay!.classList.contains("open")) {
-        clickFirstBlock(blocks);
-        e.preventDefault();
+      switch (true) {
+        case e.key.length === 1:
+          filter += e.key; // add letters or numbers only
+          break;
+        case e.key === "Backspace":
+          filter = filter.slice(0, -1); // delete last character
+          break;
+        case e.key === "Enter" || e.key === "Escape":
+          if (e.key === "Enter") clickFirstBlock(blocks);
+          filter = ""; // clear filter
+          e.preventDefault();
+          break;
       }
 
+      if (!filter) toggleOverlay("close");
       filterBlocks(blocks, filter);
     }
   });
