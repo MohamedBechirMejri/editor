@@ -12,7 +12,7 @@ let filter = "";
 textarea!.focus();
 
 // Keep editor focused
-textarea && textarea.addEventListener("blur", (e: any) => e.target.focus());
+if (textarea) textarea.addEventListener("blur", (e: any) => e.target.focus());
 
 keepLastElement(textarea);
 togglePlaceholder(textarea);
