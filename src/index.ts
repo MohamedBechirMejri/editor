@@ -1,3 +1,4 @@
+import "./main.scss";
 import addBlock from "../libs/addBlock";
 import filterBlocks from "../libs/filterBlocks";
 import keepLastElement from "../libs/keepLastElement";
