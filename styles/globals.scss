@@ -1,0 +1,304 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// TODO: destructure it into modules
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #a9aeb8;
+    padding: 1rem;
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+
+        .main {
+          cursor: pointer;
+          // text-decoration: underline;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .project {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .publish {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+      }
+
+      .divider {
+        background-color: #dbdde1;
+        width: 1px;
+        height: 1.25rem;
+      }
+
+      button {
+        color: #3565a9;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  main {
+    max-width: 700px;
+    margin-top: 0.5rem;
+    margin-inline: auto;
+
+    .statusbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.25rem;
+      padding-inline: 0.5rem;
+      border-style: solid;
+      border-color: #e5e7eb;
+      border-width: 1px;
+      border-radius: 0.25rem;
+      color: #aaafb8;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &.left {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+
+          .name {
+            background-color: #d9f9e6;
+            color: #38795c;
+            padding: 0.25rem;
+            padding-inline: 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 700;
+          }
+
+          .divider {
+            background-color: #dbdde1;
+            width: 1px;
+            height: 0.75rem;
+          }
+
+          .time-passed {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+
+          img {
+            border-radius: 999999999px;
+          }
+
+          .dontknowwhatthisisyet {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+        }
+
+        &.right {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    .textarea {
+      margin-top: 2rem;
+      outline: none;
+
+      h1,
+      h2,
+      h3 {
+        position: relative;
+        margin-block: 1rem;
+
+        &::after {
+          content: attr(data-placeholder);
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #a9aeb8;
+          cursor: text;
+        }
+
+        &.hide-placeholder {
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+
+    .block-picker {
+      background-color: #fff;
+      border: solid 1px #e5e7eb;
+      border-radius: 0.25rem;
+      width: max-content;
+      height: max-content;
+      max-width: 21rem;
+      overflow: hidden;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      transition: all 0.25s;
+      transform-origin: top left;
+      transform: scaleX(0) scaleY(0);
+
+      &.open {
+        transform: scaleX(1) scaleY(1);
+      }
+
+      h1 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding-bottom: 0.25rem;
+        color: #0d121c;
+      }
+
+      h2 {
+        font-size: 0.85rem;
+        font-weight: light;
+        padding-bottom: 0.75rem;
+        color: #a4aab4;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: light;
+        color: #8e929c;
+        padding-bottom: 1rem;
+
+        span {
+          background-color: #3565a9;
+          color: white;
+          padding-inline: 0.25rem;
+          padding-block: 0.1rem;
+          border-radius: 0.25rem;
+        }
+      }
+
+      .block {
+        background-color: white;
+        padding: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: rgb(243, 243, 243);
+        }
+
+        h1 {
+          font-size: 1rem;
+          font-weight: bold;
+          padding-bottom: 0.25rem;
+          color: #0d121c;
+        }
+
+        p {
+          font-size: 0.85rem;
+          font-weight: light;
+          padding-bottom: 0.25rem;
+          color: #9da3ae;
+        }
+      }
+    }
+  }
+}
+
+// beautiful scrollbars
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 100%;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
