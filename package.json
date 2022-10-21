@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production ",
-    "start": "webpack  --mode production --watch"
+    "start": "webpack serve --mode production "
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.40.1",
