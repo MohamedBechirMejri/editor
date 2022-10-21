@@ -1,7 +1,7 @@
 import moveCursortoNextElement from "../moveCursortoNextElement";
 import toggleOverlay from "../toggleOverlay";
 
-const addBlockClickListener = () => {
+const addBlockClickListener = (clearFilter: { (): void }) => {
   const h1 = document.getElementById("h1-block");
   const h2 = document.getElementById("h2-block");
   const h3 = document.getElementById("h3-block");
@@ -17,6 +17,8 @@ const addBlockClickListener = () => {
 
   h1!.addEventListener("click", () => {
     handleClick(`<h1 data-placeholder='Heading 1'><br /></h1>`);
+    clearFilter();
+    console.log("hi");
   });
 
   h2!.addEventListener("click", () => {
