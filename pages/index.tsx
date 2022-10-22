@@ -4,20 +4,21 @@ import Header from "../components/Header";
 import Statusbar from "../components/Statusbar";
 import Textarea from "../components/Textarea";
 import BlockPicker from "../components/BlockPicker";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [filter, setFilter] = useState("");
+
   return (
     <>
       <Head>
         <title>Editor</title>
       </Head>
-
       <Header />
-
       <main>
         <Statusbar />
-        <Textarea />
-        <BlockPicker />
+        <Textarea filter={filter} setFilter={setFilter} />
+        <BlockPicker filter={filter} setFilter={setFilter} />
       </main>
     </>
   );
