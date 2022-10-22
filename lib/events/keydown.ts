@@ -18,17 +18,19 @@ const addKeydownListener = (
 
     if (e.key === "/") toggleOverlay("open");
 
-    if (classList.contains("open") && e.key.length === 1) filter += e.key; // add letters or numbers only
+    if (classList.contains("open") && e.key.length === 1)
+      setFilter(filter => (filter += e.key)); // add letters or numbers only
 
     if (e.key === " ") blockInputOnFirstElement(e, children);
 
     if (e.key === "Backspace") {
       blockInputOnFirstElement(e, children);
-      if (classList.contains("open")) filter = filter.slice(0, -1); // delete last character
+      if (classList.contains("open"))
+        setFilter(filter => (filter = filter.slice(0, -1))); // delete last character
     }
 
     if (e.key === "Escape") {
-      filter = ""; // clear filter
+      setFilter(""); // clear filter
       e.preventDefault();
     }
 
@@ -37,7 +39,7 @@ const addKeydownListener = (
         clickFirstBlock(blocks);
         e.preventDefault();
       }
-      filter = ""; // clear filter
+      setFilter(""); // clear filter
     }
 
     if (!filter && e.key !== "/") toggleOverlay("close");
