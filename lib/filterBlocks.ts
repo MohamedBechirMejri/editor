@@ -4,7 +4,7 @@ const filterBlocks = (blocks: NodeList, filter: string) => {
   const filterText = filter.slice(1, filter.length);
   filterSpan!.innerText = filterText || "None";
 
-  blocks.forEach((block: HTMLElement) => {
+  blocks.forEach((block: any) => {
     if (!block.innerText.toLowerCase().includes(filterText.toLowerCase()))
       block.style.display = "none";
     else block.style.display = "flex";

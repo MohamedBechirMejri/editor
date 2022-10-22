@@ -1,7 +1,7 @@
 import "./styles/main.scss";
-import addKeydownListener from "../../libs/events/keydown";
-import addBlockClickListener from "../../libs/events/clickBlock";
-import addInputListener from "../../libs/events/input";
+import addKeydownListener from "../../lib/events/keydown";
+import addBlockClickListener from "../../lib/events/clickBlock";
+import addInputListener from "../../lib/events/input";
 
 const textarea: HTMLElement | null = document.querySelector(".textarea");
 
