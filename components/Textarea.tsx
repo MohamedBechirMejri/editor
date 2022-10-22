@@ -1,19 +1,32 @@
 import addKeydownListener from "../lib/events/keydown";
 import addInputListener from "../lib/events/input";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
-const Textarea = () => {
-  const textarea: HTMLElement | null = document.querySelector(".textarea");
+const Textarea = ({
+  filter,
+  setFilter,
+}: {
+  filter: string;
+  setFilter: Dispatch<SetStateAction<string>>;
+}) => {
+  const textareaRef = useRef(null);
 
-  let filter = "";
+  useEffect(() => {
+    // @ts-ignore
+    textareaRef.current.focus();
 
-  textarea!.focus();
+    // Keep editor focused
+    addInputListener(textareaRef.current!);
+    addKeydownListener(textareaRef.current!, filter, setFilter);
+  }, []);
 
-  // Keep editor focused
-  textarea!.addEventListener("blur", (e: any) => e.target.focus());
-  addInputListener(textarea!);
-  addKeydownListener(textarea!, filter);
   return (
-    <div contentEditable="true" className="textarea">
+    <div
+      ref={textareaRef}
+      contentEditable="true"
+      className="textarea"
+      onBlur={(e: any) => e.target.focus()}
+    >
       <h1 id="title" data-placeholder="Untitled">
         <br />
       </h1>
