@@ -1,9 +1,14 @@
+import { Dispatch, SetStateAction } from "react";
 import blockInputOnFirstElement from "../blockInputOnFirstElement";
 import clickFirstBlock from "../clickFirstBlock";
 import filterBlocks from "../filterBlocks";
 import toggleOverlay from "../toggleOverlay";
 
-const addKeydownListener = (textarea: HTMLElement, filter: string) => {
+const addKeydownListener = (
+  textarea: HTMLElement,
+  filter: string,
+  setFilter: Dispatch<SetStateAction<string>>
+) => {
   const overlay = document.querySelector(".block-picker");
   const blocks: NodeList = document.querySelectorAll(".block");
 
