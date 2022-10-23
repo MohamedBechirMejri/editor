@@ -1,27 +1,30 @@
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import moveCursortoNextElement from "../lib/moveCursortoNextElement";
-import toggleOverlay from "../lib/toggleOverlay";
 
 const BlockPicker = ({
   filter,
   setFilter,
+  isOverlayVisible,
+  setIsOverlayVisible,
 }: {
   filter: string;
   setFilter: Dispatch<SetStateAction<string>>;
+  isOverlayVisible: boolean;
+  setIsOverlayVisible: Dispatch<SetStateAction<boolean>>;
 }) => {
   const handleClick = (html: string) => {
     window!
       .getSelection()!
       .focusNode!.parentElement!.insertAdjacentHTML("afterend", html);
 
-    toggleOverlay("close");
+    setIsOverlayVisible(false);
     moveCursortoNextElement();
     setFilter("");
   };
 
   return (
-    <div className="block-picker">
+    <div className={`block-picker ${isOverlayVisible && "open"}`}>
       <div>
         <h1>Add blocks</h1>
         <h2>Keep typing to filter, or escape to exit</h2>

@@ -8,6 +8,7 @@ import { useState } from "react";
 
 const Home: NextPage = () => {
   const [filter, setFilter] = useState("");
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
   return (
     <>
@@ -17,8 +18,18 @@ const Home: NextPage = () => {
       <Header />
       <main>
         <Statusbar />
-        <Textarea filter={filter} setFilter={setFilter} />
-        <BlockPicker filter={filter} setFilter={setFilter} />
+        <Textarea
+          filter={filter}
+          setFilter={setFilter}
+          isOverlayVisible={isOverlayVisible}
+          setIsOverlayVisible={setIsOverlayVisible}
+        />
+        <BlockPicker
+          filter={filter}
+          setFilter={setFilter}
+          isOverlayVisible={isOverlayVisible}
+          setIsOverlayVisible={setIsOverlayVisible}
+        />
       </main>
     </>
   );

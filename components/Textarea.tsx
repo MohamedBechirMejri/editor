@@ -5,9 +5,13 @@ import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 const Textarea = ({
   filter,
   setFilter,
+  isOverlayVisible,
+  setIsOverlayVisible,
 }: {
   filter: string;
   setFilter: Dispatch<SetStateAction<string>>;
+  isOverlayVisible: boolean;
+  setIsOverlayVisible: Dispatch<SetStateAction<boolean>>;
 }) => {
   const textareaRef = useRef(null);
 
@@ -17,7 +21,13 @@ const Textarea = ({
 
     // Keep editor focused
     addInputListener(textareaRef.current!);
-    addKeydownListener(textareaRef.current!, filter, setFilter);
+    addKeydownListener(
+      textareaRef.current!,
+      isOverlayVisible,
+      filter,
+      setFilter,
+      setIsOverlayVisible
+    );
   }, []);
 
   return (

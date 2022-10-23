@@ -1,7 +1,7 @@
 const clickFirstBlock = (blocks: NodeList) => {
   let clicked = false;
 
-  blocks.forEach((block: HTMLElement) => {
+  blocks.forEach((block: any) => {
     if (clicked || block.style.display === "none") return;
     else block.click();
     clicked = true;
